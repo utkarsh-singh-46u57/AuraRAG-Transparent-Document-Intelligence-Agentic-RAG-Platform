@@ -23,7 +23,11 @@ app = FastAPI(
 # CORS middleware for React Vite frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS,
+    allow_origins=[
+        settings.CORS_ORIGINS,
+        "https://aura-rag-transparent-document-intel.vercel.app",
+        "http://localhost:3000"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
